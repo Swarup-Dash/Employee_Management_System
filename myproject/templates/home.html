@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<body class="container" style="text-align: center">
+    {% include "navbar.html" %}
+
+    <h1> Hello This is my home page.... </h1>
+    <form action="home/" target="_blank" method="POST">
+        {% csrf_token %}
+    {% comment %} <input type='text' name="check"> <button>Submit</button>  {% endcomment %}
+    <input type='checkbox' value="True" name="click"> <button>CLICK</button> 
+    </form>
+    <p> Home pages are located in the root directory of the website. 
+        Many home pages act as a virtual directory for a site — they provide
+        top-level menus where visitors can go deeper into various areas of the site. 
+        For instance, a typical website has a homepage with menu items like “about,” 
+        “contact,” “products,” “services,” “press” or “news.”
+
+        In addition, the home page often serves to orient visitors by providing titles,
+        headlines and images and visuals that show what the website is about, and in some
+        cases, who owns it and maintains it. One of the best examples is the average 
+        business website, which has the business name in a prominent place, and often features
+        the logo, while also showing pictures related to that business, for instance, who works 
+        there, what the business produces, or what it does in a community </p>  
+    <button> <a href="contact/">Contact US</a> </button>
+    
+    {% comment %} Accessing Dynamic Values {% endcomment %}
+
+    {% if isActive %}
+    <div>
+        <h1> Today's date is {{ date }}</h1>
+        <h1> Name is {{ name }} </h1>
+        <hr />
+        <h1> Student Data </h1>
+        <h2> Student Name: {{ student.student_name }} </h2>
+        <h2> Student College: {{ student.student_college }} </h2>
+        <h2> Student City: {{ student.student_city }} </h2>
+        <hr>
+
+        <h1> Favorite Programs </h1>
+
+        {% for p in list_of_programs %}
+        <h3> {{ p }} </h3>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>

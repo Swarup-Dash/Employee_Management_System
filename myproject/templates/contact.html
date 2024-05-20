@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+
+
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+
+    <h1 style="text-align: center; color: #333;">Contact Us</h1>
+    
+    <form action="#" method="post" style="margin-top: 30px;">
+        <div style="margin-bottom: 20px;">
+            <label for="name" style="display: block; font-weight: bold;">Name:</label>
+            <input type="text" id="name" name="name" style="width: 100%; padding: 10px; border: 1px solid #ccc;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label for="email" style="display: block; font-weight: bold;">Email:</label>
+            <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border: 1px solid #ccc;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label for="message" style="display: block; font-weight: bold;">Message:</label>
+            <textarea id="message" name="message" rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc;"></textarea>
+        </div>
+        
+        <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; cursor: pointer; font-size: 16px;">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
